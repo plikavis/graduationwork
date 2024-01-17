@@ -17,4 +17,4 @@ def api_delete_project(project_id, cookie):
     result = requests.post(url=settings.base_url + settings.api + f'/delete_project/{project_id}',
                            cookies={"tr_session": cookie['value']},
                            headers={'Content-Type': 'application/json'})
-    return result.json()
+    return result.text
