@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "announcement": {
+      "type": "string"
+    },
+    "show_announcement": {
+      "type": "boolean"
+    },
+    "is_completed": {
+      "type": "boolean"
+    },
+    "completed_on": {
+      "type": "null"
+    },
+    "suite_mode": {
+      "type": "integer"
+    },
+    "default_role_id": {
+      "type": "null"
+    },
+    "case_statuses_enabled": {
+      "type": "boolean"
+    },
+    "url": {
+      "type": "string"
+    },
+    "users": {
+      "type": "array",
+      "items": {}
+    },
+    "groups": {
+      "type": "array",
+      "items": {}
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "announcement",
+    "show_announcement",
+    "is_completed",
+    "completed_on",
+    "suite_mode",
+    "default_role_id",
+    "case_statuses_enabled",
+    "url",
+    "users",
+    "groups"
+  ]
+}
