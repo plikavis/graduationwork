@@ -1,7 +1,7 @@
 import pytest
 import requests
 from allure_commons._allure import step
-from selene import browser, have, be
+from selene import browser, have, be, command
 from graduation_work.project_page import Project
 from tests.functions import api_add_project, api_delete_project
 
@@ -11,7 +11,7 @@ class TestTestCases:
     def test_add_test_case_successfully(self, auth):
         browser.open("/suites/view/1")
         browser.all('[data-testid="suiteAddCaseLink"]').first.click()
-        browser.element('[data-testid="addEditCaseTitle"]').type("New test case by autotest1")
+        browser.element('[data-testid="addEditCaseTitle"]').with_(timeout=2.0).type("New test case by autotest1")
         browser.element('[data-testid="addTestCaseButton"]').click()
         browser.element('[data-testid="messageSuccessDivBox"]').should(be.visible)
         # проверить что добавлен
