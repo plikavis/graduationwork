@@ -49,7 +49,7 @@ class Project:
         return self
 
     def check_success_message_editing_project(self):
-        browser.element('#content-inner > div.message.message-success').should(
+        browser.element('#content-inner > div.message.message-success').with_(timeout=3.0).should(
              have.text("Successfully updated the project."))
         return self
 

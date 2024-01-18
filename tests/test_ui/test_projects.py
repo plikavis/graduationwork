@@ -1,6 +1,6 @@
 import pytest
 from allure_commons._allure import step
-from selene import browser, have, be
+from selene import browser
 from graduation_work.project_page import Project
 from tests.functions import api_add_project, api_delete_project
 
@@ -35,16 +35,13 @@ class TestProject:
         with step("Check error message"):
             project.check_error_message_adding_project()
 
-
     def test_edit_project(self):
         with step("Add new project"):
             project = Project()
-            cookie = browser.driver.get_cookie("tr_session")
-            new_project = api_add_project(name="Project for edit",
+            project_id = api_add_project(name="Project for edit",
                                          announcement="announcement for edit",
                                          show_announcement=True,
-                                         suit_mode=2, cookie=cookie)
-            project_id = new_project["id"]
+                                         suite_mode=2)
         with step(f"Go to new project page with id {project_id}"):
             project.go_to_project_page(project_id)
         with step("Click edit button"):
@@ -56,4 +53,14 @@ class TestProject:
         with step("Check message about changing"):
             project.check_success_message_editing_project()
         with step("Delete project"):
-            api_delete_project(project_id, cookie)
+            api_delete_project(project_id)
+
+    def test_search_and_open_project(self):
+        with step("Search project"):
+            browser.element("#search_query").click().type("First project")
+        with step("Click to project in search result"):
+            browser.element("#newSearchResultsContent > div:nth-child(2) > ul > li > a").click()
+        with step("Check name of open project"):
+            pass
+
+
