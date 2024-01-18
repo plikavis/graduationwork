@@ -1,4 +1,4 @@
-from selene import browser, have, be
+from selene import browser, have, be, command
 
 
 class Case:
@@ -19,7 +19,7 @@ class Case:
         return self
 
     def check_message_success(self, text):
-        browser.element('[data-testid="messageSuccessDivBox"]').should(be.visible).should(
+        browser.element('[data-testid="messageSuccessDivBox"]').perform(command.js.scroll_into_view).should(be.visible).should(
                                                                 have.text(text))
         return self
 
@@ -32,10 +32,9 @@ class Case:
             have.text("Field Title is a required field."))
         return self
 
-
     def click_edit_case_button(self):
         browser.element('[data-testid="testCaseEditButton"]').click()
-        pass
+        return self
 
     def click_save_button(self):
         browser.element('[data-testid="addTestCaseButton"]').click()
@@ -44,12 +43,3 @@ class Case:
     def open_case_card(self):
         browser.open("/cases/view/2275")
         return self
-
-
-
-
-
-
-
-
-
