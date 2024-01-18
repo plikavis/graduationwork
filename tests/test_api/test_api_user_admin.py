@@ -7,7 +7,7 @@ from allure_commons.types import AttachmentType
 from selene import browser
 import jsonschema
 from config import settings
-from utils import load_schema
+from utils.utils import load_schema
 from tests.functions import api_add_project
 
 
