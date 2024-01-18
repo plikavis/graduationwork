@@ -55,12 +55,11 @@ class TestProject:
         with step("Delete project"):
             api_delete_project(project_id)
 
-    def test_search_and_open_project(self):
-        with step("Search project"):
-            browser.element("#search_query").click().type("First project")
-        with step("Click to project in search result"):
-            browser.element("#newSearchResultsContent > div:nth-child(2) > ul > li > a").click()
-        with step("Check name of open project"):
-            pass
-
-
+    def test_check_all_new_project_tabs(self):
+        project = Project()
+        with step("Go to main page"):
+            project.go_to_main_page()
+        with step("Click new project button"):
+            project.click_add_project_button()
+        with step("Check all tabs in project form"):
+            project.check_all_tabs()

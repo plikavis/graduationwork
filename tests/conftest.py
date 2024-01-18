@@ -10,13 +10,6 @@ from config import settings
 from utils import attach
 
 
-# @pytest.fixture(scope="class")
-# def browser_config():
-#     browser.config.timeout = 10.0
-#     browser.config.window_height = 900
-#     browser.config.window_width = 1028
-#     browser.config.base_url = "https://graduationwork.testrail.io/index.php?"
-
 @pytest.fixture(scope="class", autouse=True)
 def browser_config(request):
     browser_version = settings.browser_version
@@ -67,8 +60,6 @@ def auth():
         browser.element(".navigation-username").should(have.text("Polina Test"))
 
 
-
-
 @pytest.fixture(scope="class")
 def auth_read():
     with step("LOGIN"):
@@ -82,5 +73,4 @@ def auth_read():
         browser.driver.add_cookie({"name": "tr_session", "value": cookie_auth})
         browser.open(f"{settings.base_url}")
         browser.element(".navigation-username").should(have.text("Autotest"))
-
 

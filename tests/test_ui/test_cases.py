@@ -4,7 +4,6 @@ from graduation_work.case_page import Case
 from tests.functions import api_add_project, api_delete_project
 
 
-
 @pytest.mark.usefixtures("browser_config", "auth")
 class TestTestCases:
     def test_add_test_case_successfully(self, auth):
@@ -19,7 +18,7 @@ class TestTestCases:
         with step("Click 'Add case' button"):
             case.click_add_case_button()
         with step("Input case's name "):
-             case.input_case_name()
+            case.input_case_name()
         with step("Click create button"):
             case.click_add_case_button_for_create()
         with step("Check message about success"):
@@ -51,7 +50,4 @@ class TestTestCases:
             case.click_save_button()
         with step("Check success message"):
             case.check_message_success("Successfully updated the test case.")
-
-
-
 

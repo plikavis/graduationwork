@@ -56,3 +56,19 @@ class Project:
     def click_edit_button(self):
         browser.element('[data-testid="editProjectButton"]').should(be.visible).click()
         return self
+
+    def go_to_main_page(self):
+        browser.open("/")
+        return self
+
+    def check_all_tabs(self):
+        browser.element('[data-testid="addProjectNameInput"]').should(be.visible)
+        browser.element("#projects-tabs-access").click()
+        browser.element('[data-testid="addEditProjectAccessTabGlobal"]').should(have.text("Global Role"))
+        browser.element("#projects-tabs-defects").click()
+        browser.element("#defect_id_url").should(be.visible)
+        browser.element("#projects-tabs-references").click()
+        browser.element("#reference_id_url").should(be.visible)
+        browser.element("#users-fields-fields").click()
+        browser.element("#addConfig").should(have.text("Add User Variable"))
+        return self
