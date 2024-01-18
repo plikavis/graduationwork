@@ -18,8 +18,8 @@ class Case:
         browser.element('[data-testid="addTestCaseButton"]').click()
         return self
 
-    def check_message_success(self, text):
-        browser.element('[data-testid="messageSuccessDivBox"]').should(have.text(text))
+    def check_message_edit_success(self):
+        browser.element('[data-testid="messageSuccessDivBox"]').should(have.text("Successfully updated the test case."))
         return self
 
     def click_add_next_button(self):
@@ -41,4 +41,8 @@ class Case:
 
     def open_case_card(self):
         browser.open("/cases/view/2275")
+        return self
+
+    def check_message_create_success(self):
+        browser.element('[data-testid="messageSuccessDivBox"]').should(have.text("Successfully added the new test case."))
         return self

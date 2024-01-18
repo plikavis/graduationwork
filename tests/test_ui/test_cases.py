@@ -22,7 +22,7 @@ class TestTestCases:
         with step("Click create button"):
             case.click_add_case_button_for_create()
         with step("Check message about success"):
-            case.check_message_success("Successfully added the new test case.")
+            case.check_message_create_success()
         with step(f"Delete case with id - {project_id}"):
             api_delete_project(project_id=project_id)
 
@@ -48,5 +48,5 @@ class TestTestCases:
         with step("Click Save Title button"):
             case.click_save_button()
         with step("Check success message"):
-            case.check_message_success("Successfully updated the test case.")
+            case.check_message_edit_success()
 
