@@ -32,7 +32,6 @@ class TestTestCases:
             case.open_cases_page(1)
         with step("Click 'Add case' button"):
             case.click_add_case_button()
-            # browser.all('[data-testid="suiteAddCaseLink"]').first.click()
         with step("Click 'Add and next' button"):
             case.click_add_next_button()
         with step("Check message about fail"):

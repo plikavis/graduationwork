@@ -19,8 +19,7 @@ class Case:
         return self
 
     def check_message_success(self, text):
-        browser.element('[data-testid="messageSuccessDivBox"]').perform(command.js.scroll_into_view).should(be.visible).should(
-                                                                have.text(text))
+        browser.element('[data-testid="messageSuccessDivBox"]').should(have.text(text))
         return self
 
     def click_add_next_button(self):
