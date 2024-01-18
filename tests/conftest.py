@@ -41,7 +41,7 @@ def browser_config(request):
     browser.config.base_url = "https://graduationwork.testrail.io/index.php?"
     browser.config.driver = driver
     browser.config.window_width = 1440
-    browser.config.window_height = 800
+    browser.config.window_height = 900
 
     yield browser
 

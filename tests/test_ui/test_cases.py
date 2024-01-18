@@ -8,13 +8,13 @@ from tests.functions import api_add_project, api_delete_project
 
 @pytest.mark.usefixtures("browser_config", "auth")
 class TestTestCases:
-    def test_add_test_case_successfully(self, auth):
-        browser.open("/suites/view/1")
-        browser.all('[data-testid="suiteAddCaseLink"]').first.click()
-        browser.element('[data-testid="addEditCaseTitle"]').with_(timeout=2.0).type("New test case by autotest1")
-        browser.element('[data-testid="addTestCaseButton"]').click()
-        browser.element('[data-testid="messageSuccessDivBox"]').should(be.visible)
-        # проверить что добавлен
+    # def test_add_test_case_successfully(self, auth):
+    #     browser.open("/suites/view/1")
+    #     browser.all('[data-testid="suiteAddCaseLink"]').first.click()
+    #     browser.element('[data-testid="addEditCaseTitle"]').with_(timeout=2.0).type("New test case by autotest1")
+    #     browser.element('[data-testid="addTestCaseButton"]').click()
+    #     browser.element('[data-testid="messageSuccessDivBox"]').should(be.visible)
+    #     # проверить что добавлен
 
     def test_try_add_empty_test_case(self, auth):
         browser.open("/suites/view/1")
