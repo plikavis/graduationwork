@@ -1,5 +1,5 @@
 selene==2.0.0rc4
-pytest~=8.0.0rc1
+pytest==8.0.0rc1
 requests==2.31.0
 allure-pytest==2.13.2
 requests==2.31.0
