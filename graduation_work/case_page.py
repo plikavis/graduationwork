@@ -11,7 +11,7 @@ class Case:
         return self
 
     def input_case_name(self):
-        browser.element('[data-testid="addEditCaseTitle"]').with_(timeout=2.0).type("New test case by autotest1")
+        browser.element('[data-testid="addEditCaseTitle"]').type("New test case by autotest1")
         return self
 
     def click_add_case_button_for_create(self,):

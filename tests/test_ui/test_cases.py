@@ -9,7 +9,7 @@ class TestTestCases:
     def test_add_test_case_successfully(self, auth):
         case = Case()
         with step("Create new project and get its id"):
-            project_id = api_add_project(name="Project for add case",
+            project_id = api_add_project(name="for add case 21",
                                          announcement="announcement for add case",
                                          show_announcement=True,
                                          suite_mode=1)
