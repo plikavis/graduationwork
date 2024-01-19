@@ -1,4 +1,5 @@
 from selene import browser, have, be, command
+import uuid
 
 
 class Case:
@@ -11,7 +12,7 @@ class Case:
         return self
 
     def input_case_name_for_add(self):
-        browser.element('[data-testid="addEditCaseTitle"]').type("New test case by autotest1")
+        browser.element('[data-testid="addEditCaseTitle"]').clear().type(str(uuid.uuid4()))
         browser.element('[data-testid="addEditCaseTitle"]').should(be.not_.blank)
         return self
 
@@ -49,6 +50,6 @@ class Case:
         return self
 
     def input_case_name_for_edit(self):
-        browser.element('[data-testid="addEditCaseTitle"]').clear().type("New test case by autotest1234")
+        browser.element('[data-testid="addEditCaseTitle"]').clear().type(str(uuid.uuid4()))
         browser.element('[data-testid="addEditCaseTitle"]').should(be.not_.blank)
         return self
