@@ -10,10 +10,9 @@ from config import settings
 from utils import attach
 
 
-@pytest.fixture(scope="function", autouse=True)
+@pytest.fixture(scope="class", autouse=True)
 def browser_config(request):
     browser_version = settings.browser_version
-    # browser_version = request.config.getoption('--browser_version')
     browser_version = browser_version if browser_version != "" else "100"
     options = Options()
     selenoid_capabilities = {
