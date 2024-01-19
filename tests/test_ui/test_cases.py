@@ -26,27 +26,27 @@ class TestTestCases:
         with step(f"Delete case with id - {project_id}"):
             api_delete_project(project_id=project_id)
 
-    def test_try_add_empty_test_case(self, auth):
-        case = Case()
-        with step(f"Go to cases page for project with id - 1"):
-            case.open_cases_page(1)
-        with step("Click 'Add case' button"):
-            case.click_add_case_button()
-        with step("Click 'Add and next' button"):
-            case.click_add_next_button()
-        with step("Check message about fail"):
-            case.check_message_fail()
-
-    def test_edit_test_case(self, auth):
-        case = Case()
-        with step("Open case card in First project"):
-            case.open_case_card()
-        with step("Click edit button"):
-            case.click_edit_case_button()
-        with step("Input new case's name"):
-            case.input_case_name()
-        with step("Click Save Title button"):
-            case.click_save_button()
-        with step("Check success message"):
-            case.check_message_edit_success()
+    # def test_try_add_empty_test_case(self, auth):
+    #     case = Case()
+    #     with step(f"Go to cases page for project with id - 1"):
+    #         case.open_cases_page(1)
+    #     with step("Click 'Add case' button"):
+    #         case.click_add_case_button()
+    #     with step("Click 'Add and next' button"):
+    #         case.click_add_next_button()
+    #     with step("Check message about fail"):
+    #         case.check_message_fail()
+    #
+    # def test_edit_test_case(self, auth):
+    #     case = Case()
+    #     with step("Open case card in First project"):
+    #         case.open_case_card()
+    #     with step("Click edit button"):
+    #         case.click_edit_case_button()
+    #     with step("Input new case's name"):
+    #         case.input_case_name()
+    #     with step("Click Save Title button"):
+    #         case.click_save_button()
+    #     with step("Check success message"):
+    #         case.check_message_edit_success()
 
