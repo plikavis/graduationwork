@@ -1,8 +1,7 @@
 import json
 import allure
-import pytest
 import requests
-from allure_commons._allure import step
+
 from allure_commons.types import AttachmentType
 from selene import browser
 import jsonschema
@@ -32,6 +31,7 @@ def test_get_project_successfully_200(browser_config, auth):
                       extension="txt")
         allure.attach(body=result.text, name="Response", attachment_type=AttachmentType.JSON, extension="txt")
         allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")
+
 
 @allure.id("288")
 @allure.title("Update project request with admin access")
@@ -63,7 +63,8 @@ def test_post_update_project_successfully_200(browser_config, auth):
         allure.attach(body=result.text, name="Response", attachment_type=AttachmentType.TEXT, extension="txt")
         allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")
 
-@allure.id("283")
+
+@allure.id("29520")
 @allure.title("Get project request with only read access")
 @allure.tag("API", "regress")
 @allure.feature("Projects")
@@ -86,7 +87,8 @@ def test_post_update_unknown_project_400(browser_config, auth):
         allure.attach(body=result.text, name="Response", attachment_type=AttachmentType.TEXT, extension="txt")
         allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")
 
-@allure.id("278")
+
+@allure.id("29519")
 @allure.title("Delete project request with admin access")
 @allure.tag("API", "smoke")
 @allure.feature("Projects")
@@ -110,7 +112,8 @@ def test_post_delete_project_200(browser_config, auth):
         allure.attach(body=result.text, name="Response", attachment_type=AttachmentType.TEXT, extension="txt")
         allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")
 
-@allure.id("300")
+
+@allure.id("29518")
 @allure.title("Get project request with only read access")
 @allure.tag("API", "regress")
 @allure.feature("Projects")
