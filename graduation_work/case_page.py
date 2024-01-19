@@ -46,7 +46,7 @@ class Case:
         return self
 
     def open_case_card(self):
-        browser.open("/cases/view/2275")
+        browser.open("/cases/view/2322")
         return self
 
     def check_message_create_success(self):
