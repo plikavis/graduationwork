@@ -1,5 +1,4 @@
 import allure
-import pytest
 from allure_commons._allure import step
 from graduation_work.case_page import Case
 from tests.functions import api_add_project, api_delete_project

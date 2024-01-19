@@ -24,7 +24,7 @@ def test_add_new_project(browser_config, auth):
         project.choose_enable_cases()
     with allure.step("Click button add new project"):
         project.click_add_project_button_for_create()
-    with allure.step("Check message adding new project succesfully"):
+    with allure.step("Check message adding new project successfully"):
         project.check_message_adding_new_project()
 
 

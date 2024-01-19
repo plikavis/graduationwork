@@ -2,7 +2,6 @@ from selene import browser
 from config import settings
 import allure
 import requests
-from allure_commons._allure import step
 from allure_commons.types import AttachmentType
 
 
@@ -10,7 +9,7 @@ from allure_commons.types import AttachmentType
 @allure.tag("API", "regress")
 @allure.feature("Projects")
 @allure.label("owner", "Vishnyakova P.")
-@allure.story("API: Adding API for projectst")
+@allure.story("API: Adding API for projects")
 @allure.step("API: Try to get project without access`")
 def test_get_project_no_access_403(browser_config, auth_read):
     with allure.step("Get cookie"):
@@ -32,7 +31,7 @@ def test_get_project_no_access_403(browser_config, auth_read):
 @allure.tag("API", "regress")
 @allure.feature("Projects")
 @allure.label("owner", "Vishnyakova P.")
-@allure.story("API: Adding API for projectst")
+@allure.story("API: Adding API for projects")
 @allure.step("API:Try delete project  with only read access")
 def test_post_delete_project_user_read_only_403(browser_config, auth_read):
     with allure.step("Get cookie"):

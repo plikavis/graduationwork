@@ -14,7 +14,7 @@ from tests.functions import api_add_project
 @allure.tag("API", "smoke")
 @allure.feature("Projects")
 @allure.label("owner", "Vishnyakova P.")
-@allure.story("API: Adding API for projectst")
+@allure.story("API: Adding API for projects")
 @allure.step("API: Get project")
 def test_get_project_successfully_200(browser_config, auth):
     with allure.step("Get cookie"):
@@ -37,7 +37,7 @@ def test_get_project_successfully_200(browser_config, auth):
 @allure.tag("API", "smoke")
 @allure.feature("Projects")
 @allure.label("owner", "Vishnyakova P.")
-@allure.story("API: Adding API for projectst")
+@allure.story("API: Adding API for projects")
 @allure.step("API: Update project")
 def test_post_update_project_successfully_200(browser_config, auth):
     with allure.step("Get cookie"):
@@ -67,7 +67,7 @@ def test_post_update_project_successfully_200(browser_config, auth):
 @allure.tag("API", "regress")
 @allure.feature("Projects")
 @allure.label("owner", "Vishnyakova P.")
-@allure.story("API: Adding API for projectst")
+@allure.story("API: Adding API for projects")
 @allure.step("API: Try to update unknown project")
 def test_post_update_unknown_project_400(browser_config, auth):
     with allure.step("Get cookie"):
@@ -90,7 +90,7 @@ def test_post_update_unknown_project_400(browser_config, auth):
 @allure.tag("API", "smoke")
 @allure.feature("Projects")
 @allure.label("owner", "Vishnyakova P.")
-@allure.story("API: Adding API for projectst")
+@allure.story("API: Adding API for projects")
 @allure.step("API: Delete project")
 def test_post_delete_project_200(browser_config, auth):
     with allure.step("Get cookie"):
@@ -114,7 +114,7 @@ def test_post_delete_project_200(browser_config, auth):
 @allure.tag("API", "regress")
 @allure.feature("Projects")
 @allure.label("owner", "Vishnyakova P.")
-@allure.story("API: Adding API for projectst")
+@allure.story("API: Adding API for projects")
 @allure.step("API: Try delete unknown project ")
 def test_post_delete_unknown_project_400(browser_config, auth):
     with allure.step("Get cookie"):

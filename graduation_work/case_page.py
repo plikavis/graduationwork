@@ -1,6 +1,5 @@
 import time
-
-from selene import browser, have, be, command
+from selene import browser, have, be
 import uuid
 
 
@@ -50,7 +49,8 @@ class Case:
         return self
 
     def check_message_create_success(self):
-        browser.element('[data-testid="messageSuccessDivBox"]').should(have.text("Successfully added the new test case."))
+        browser.element('[data-testid="messageSuccessDivBox"]').should(
+                                                                have.text("Successfully added the new test case."))
         return self
 
     def input_case_name_for_edit(self):
