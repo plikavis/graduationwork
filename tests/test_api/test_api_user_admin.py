@@ -11,9 +11,9 @@ from utils.utils import load_schema
 from tests.functions import api_add_project
 
 
-@pytest.mark.usefixtures("browser_config", 'auth')
+# @pytest.mark.usefixtures('auth')
 class TestAdminUser:
-    def test_get_project_successfully_200(self, auth):
+    def test_get_project_successfully_200(self, browser_config, auth):
         with step("Get cookie"):
             cookie = browser.driver.get_cookie("tr_session")
         with step("Send request"):

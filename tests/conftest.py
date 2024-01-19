@@ -10,7 +10,7 @@ from config import settings
 from utils import attach
 
 
-@pytest.fixture(scope="class", autouse=True)
+@pytest.fixture(scope="function", autouse=True)
 def browser_config(request):
     browser_version = settings.browser_version
     browser_version = browser_version if browser_version != "" else "100"
@@ -44,7 +44,7 @@ def browser_config(request):
     browser.quit()
 
 
-@pytest.fixture(scope="class")
+@pytest.fixture(scope="function")
 def auth():
     with step("LOGIN"):
         result = requests.post(url=settings.base_url + "/index.php?/auth/login/",
@@ -59,7 +59,7 @@ def auth():
         browser.element(".navigation-username").should(have.text("Polina Test"))
 
 
-@pytest.fixture(scope="class")
+@pytest.fixture(scope="function")
 def auth_read():
     with step("LOGIN"):
         result = requests.post(url="https://graduationwork.testrail.io/index.php?/auth/login/",
