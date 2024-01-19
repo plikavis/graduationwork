@@ -1,5 +1,8 @@
 ## Проект UI и API автотестов TestRail.com 
 
+
+###[Job](https://support.testrail.com/hc/en-us/articles/7077792415124-Projects)
+
 <!-- Технологии -->
 <p  align="center">
   <code><img width="5%" title="Pycharm" src="images/logo/pycharm.png"></code>
@@ -19,12 +22,19 @@
 <!-- Тест кейсы -->
 
 ### Что проверяем
-* Проверка 
-* Проверк
-* Поиск 
-* Добавление 
-* Вво
-
+UI-тесты:
+* Создание нового проекта 
+* Создание проекта с некорректными данными и сообщение об ошибке
+* Редактирование проекта и сообщение об успешном обновлении данных
+* Работу всех вкладок на странице проекта  
+* Создание нового тест-кейса
+* Создание нового тест-кейса с пустым названием и сообщение об ошибке
+* Редактирование тест-кейса и сообщение об успешном обновлении данных
+ 
+API-тесты:
+* Get запрос на получение данных по проекту, формат запроса, код ответа, формат ответа 
+* 
+* 
 
 ### <img width="5%" title="Jenkins" src="images/logo/jenkins.png"> Запуск проекта в Jenkins
 
@@ -36,15 +46,15 @@
 <!-- Allure report -->
 
 ### <img width="5%" title="Allure Report" src="images/logo/allure_report.png"> Allure report
-### [Report](https://jenkins.autotests.cloud/job/Students/job/Book_House/allure/)
+### [Report](https://jenkins.autotests.cloud/job/008_plika_vis_testrail/)
 ##### После прохождения тестов, результаты можно посмотреть в Allure отчете, где так же содержится ссылка на Jenkins
 ![This is an image](images/screenshot/allure_dashboard.png)
 
 ##### Во вкладке Graphs можно посмотреть графики о прохождении тестов, по их приоритезации, по времени прохождения и др.
-![This is an image](images/screenshot/allure_graphs.png)
+![This is an image](images/screenshot/allure_graph.png)
 
 ##### Во вкладке Suites находятся собранные тест кейсы, у которых описаны шаги и приложены логи, скриншот и видео о прохождении теста
-![This is an image](images/screenshot/allure_suites.png)
+![This is an image](images/screenshot/allure_video.png)
 
 ##### Видео прохождение теста
 ![This is an image](images/screenshot/tests_ui.gif)
@@ -67,17 +77,10 @@
 ![This is an image](images/screenshot/allure_testops_suites.png)
 
 
-<!-- Jira -->
-
-### <img width="5%" title="Jira" src="images/logo/jira.png"> Интеграция с Jira
-##### Настроив через Allure TestOps интеграцию с Jira, в тикет можно пробросить результат прохождение тестов и список тест-кейсов из Allure
-
-![This is an image](images/screenshot/jira.png)
-
 
 <!-- Telegram -->
 
 ### <img width="5%" title="Telegram" src="images/logo/tg.png"> Интеграция с Telegram
 ##### После прохождения тестов, в Telegram bot приходит сообщение с графиком и небольшой информацией о тестах.
 
-![This is an image](images/screenshot/tg_bot.png)
+![This is an image](images/screenshot/telegram.png)
