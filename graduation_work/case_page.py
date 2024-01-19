@@ -1,3 +1,5 @@
+import time
+
 from selene import browser, have, be, command
 import uuid
 
@@ -12,7 +14,9 @@ class Case:
         return self
 
     def input_case_name_for_add(self):
-        browser.element('[id="title"]').type(str(uuid.uuid4()))
+        time.sleep(2)
+        browser.element('[data-testid="addEditCaseTitle"]').set_value(str(uuid.uuid4()))
+        time.sleep(2)
         browser.element('[id="title"]').should(be.not_.blank)
         return self
 
