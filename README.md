@@ -1,4 +1,4 @@
-## Проект UI автотестов dom-knigi.ru
+## Проект UI и API автотестов TestRail.com 
 
 <!-- Технологии -->
 <p  align="center">
