@@ -38,7 +38,7 @@ API-тесты:
 
 ### <img width="5%" title="Jenkins" src="images/logo/jenkins.png"> Запуск проекта в Jenkins
 
-### [Job](https://jenkins.autotests.cloud/)
+### [Job](https://jenkins.autotests.cloud/job/008_plika_vis_testrail/)
 
 ##### При нажатии на "Собрать сейчас" начнется сборка тестов и их прохождение, через виртуальную машину в Selenide.
 ![This is an image](images/screenshot/jenkins.png)
