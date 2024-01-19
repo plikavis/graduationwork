@@ -29,7 +29,7 @@ class TestTestCases:
         with step("Click 'Add case' button"):
             case.click_add_case_button()
         with step("Input case's name "):
-            case.input_case_name()
+            case.input_case_name_for_add()
         with step("Click create button"):
             case.click_add_case_button_for_create()
         with step("Check message about success"):
@@ -44,7 +44,7 @@ class TestTestCases:
         with step("Click edit button"):
             case.click_edit_case_button()
         with step("Input new case's name"):
-            case.input_case_name()
+            case.input_case_name_for_edit()
         with step("Click Save Title button"):
             case.click_save_button()
         with step("Check success message"):

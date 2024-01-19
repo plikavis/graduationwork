@@ -10,8 +10,9 @@ class Case:
         browser.element('[data-testid="sidebarCasesAdd"]').click()
         return self
 
-    def input_case_name(self):
+    def input_case_name_for_add(self):
         browser.element('[data-testid="addEditCaseTitle"]').type("New test case by autotest1")
+        browser.element('[data-testid="addEditCaseTitle"]').should(be.not_.blank)
         return self
 
     def click_add_case_button_for_create(self,):
@@ -45,4 +46,9 @@ class Case:
 
     def check_message_create_success(self):
         browser.element('[data-testid="messageSuccessDivBox"]').should(have.text("Successfully added the new test case."))
+        return self
+
+    def input_case_name_for_edit(self):
+        browser.element('[data-testid="addEditCaseTitle"]').clear().type("New test case by autotest1234")
+        browser.element('[data-testid="addEditCaseTitle"]').should(be.not_.blank)
         return self
