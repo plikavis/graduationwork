@@ -12,7 +12,7 @@ class Case:
         return self
 
     def input_case_name_for_add(self):
-        browser.element('[data-testid="addEditCaseTitle"]').clear().type(str(uuid.uuid4()))
+        browser.element('[data-testid="addEditCaseTitle"]').clear().set_value(str(uuid.uuid4()))
         browser.element('[data-testid="addEditCaseTitle"]').should(be.not_.blank)
         return self
 
