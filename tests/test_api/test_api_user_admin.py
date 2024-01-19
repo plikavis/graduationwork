@@ -16,6 +16,7 @@ from tests.functions import api_add_project
 @allure.feature("Projects")
 @allure.label("owner", "Vishnyakova P.")
 @allure.story("API: Adding API for projectst")
+@allure.step("API: Get project")
 def test_get_project_successfully_200(browser_config, auth):
     with allure.step("Get cookie"):
         cookie = browser.driver.get_cookie("tr_session")
@@ -38,6 +39,7 @@ def test_get_project_successfully_200(browser_config, auth):
 @allure.feature("Projects")
 @allure.label("owner", "Vishnyakova P.")
 @allure.story("API: Adding API for projectst")
+@allure.step("API: Update project")
 def test_post_update_project_successfully_200(browser_config, auth):
     with allure.step("Get cookie"):
         cookie = browser.driver.get_cookie("tr_session")
@@ -67,6 +69,7 @@ def test_post_update_project_successfully_200(browser_config, auth):
 @allure.feature("Projects")
 @allure.label("owner", "Vishnyakova P.")
 @allure.story("API: Adding API for projectst")
+@allure.step("API: Try to update unknown project")
 def test_post_update_unknown_project_400(browser_config, auth):
     with allure.step("Get cookie"):
         cookie = browser.driver.get_cookie("tr_session")
@@ -89,6 +92,7 @@ def test_post_update_unknown_project_400(browser_config, auth):
 @allure.feature("Projects")
 @allure.label("owner", "Vishnyakova P.")
 @allure.story("API: Adding API for projectst")
+@allure.step("API: Delete project")
 def test_post_delete_project_200(browser_config, auth):
     with allure.step("Get cookie"):
         cookie = browser.driver.get_cookie("tr_session")
@@ -106,12 +110,13 @@ def test_post_delete_project_200(browser_config, auth):
         allure.attach(body=result.text, name="Response", attachment_type=AttachmentType.TEXT, extension="txt")
         allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")
 
-@allure.id("288")
+@allure.id("300")
 @allure.title("Get project request with only read access")
 @allure.tag("API", "regress")
 @allure.feature("Projects")
 @allure.label("owner", "Vishnyakova P.")
 @allure.story("API: Adding API for projectst")
+@allure.step("API: Try delete unknown project ")
 def test_post_delete_unknown_project_400(browser_config, auth):
     with allure.step("Get cookie"):
         cookie = browser.driver.get_cookie("tr_session")

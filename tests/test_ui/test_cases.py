@@ -11,6 +11,7 @@ from tests.functions import api_add_project, api_delete_project
 @allure.feature("Cases")
 @allure.label("owner", "Vishnyakova P.")
 @allure.story("UI: Adding interface for cases")
+@allure.step("UI: Try create test case with empty name")
 def test_try_add_empty_test_case(browser_config, auth):
     case = Case()
     with step(f"Go to cases page for project with id - 377"):
@@ -28,6 +29,7 @@ def test_try_add_empty_test_case(browser_config, auth):
 @allure.feature("Cases")
 @allure.label("owner", "Vishnyakova P.")
 @allure.story("UI: Adding interface for cases")
+@allure.step("UI: Add new test case")
 def test_add_test_case_successfully(browser_config, auth):
     case = Case()
     with allure.step("Create new project and get its id"):
@@ -55,6 +57,7 @@ def test_add_test_case_successfully(browser_config, auth):
 @allure.feature("Cases")
 @allure.label("owner", "Vishnyakova P.")
 @allure.story("UI: Adding interface for cases")
+@allure.step("UI: Edit test case")
 def test_edit_test_case(browser_config, auth):
     case = Case()
     with allure.step("Open case card in First project"):

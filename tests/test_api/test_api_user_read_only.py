@@ -14,6 +14,7 @@ from allure_commons.types import AttachmentType
 @allure.feature("Projects")
 @allure.label("owner", "Vishnyakova P.")
 @allure.story("API: Adding API for projectst")
+@allure.step("API: Try to get project without access`")
 def test_get_project_no_access_403(browser_config, auth_read):
     with allure.step("Get cookie"):
         cookie = browser.driver.get_cookie("tr_session")
@@ -36,6 +37,7 @@ def test_get_project_no_access_403(browser_config, auth_read):
 @allure.feature("Projects")
 @allure.label("owner", "Vishnyakova P.")
 @allure.story("API: Adding API for projectst")
+@allure.step("API:Try delete project  with only read access")
 def test_post_delete_project_user_read_only_403(browser_config, auth_read):
     with allure.step("Get cookie"):
         cookie = browser.driver.get_cookie("tr_session")
