@@ -10,7 +10,7 @@ from config import settings
 from utils import attach
 
 
-@pytest.fixture(scope="class", autouse=True)
+@pytest.fixture(scope="function", autouse=True)
 def browser_config(request):
     browser_version = settings.browser_version
     # browser_version = request.config.getoption('--browser_version')
@@ -45,7 +45,7 @@ def browser_config(request):
     browser.quit()
 
 
-@pytest.fixture(scope="class")
+@pytest.fixture(scope="function")
 def auth():
     with step("LOGIN"):
         result = requests.post(url=settings.base_url + "/index.php?/auth/login/",
