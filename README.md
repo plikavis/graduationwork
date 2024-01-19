@@ -2,7 +2,7 @@
 
 
 <!-- Технологии -->
-<p  align="center">
+<p  align="left">
   <code><img width="5%" title="Pycharm" src="images/logo/pycharm.png"></code>
   <code><img width="5%" title="Python" src="images/logo/python.png"></code>
   <code><img width="5%" title="Pytest" src="images/logo/pytest.png"></code>
@@ -47,7 +47,7 @@ API-тесты:
 <!-- Allure report -->
 
 ### <img width="5%" title="Allure Report" src="images/logo/allure_report.png"> Allure report
-### [Report](https://jenkins.autotests.cloud/job/008_plika_vis_testrail/)
+### [Report](https://jenkins.autotests.cloud/job/008_plika_vis_testrail/6/allure/)
 ##### После прохождения тестов, результаты можно посмотреть в Allure отчете, ссылка так же содержится  на Jenkins
 ![This is an image](images/screenshot/allure_dashboard.png)
 
