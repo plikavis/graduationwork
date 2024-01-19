@@ -45,7 +45,7 @@ def browser_config(request):
     browser.quit()
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="class")
 def auth():
     with step("LOGIN"):
         result = requests.post(url=settings.base_url + "/index.php?/auth/login/",
