@@ -6,9 +6,6 @@ from allure_commons._allure import step
 from allure_commons.types import AttachmentType
 
 
-
-
-@allure.id("288")
 @allure.title("Get project request with only read access")
 @allure.tag("API", "regress")
 @allure.feature("Projects")
@@ -31,7 +28,6 @@ def test_get_project_no_access_403(browser_config, auth_read):
         allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")
 
 
-@allure.id("288")
 @allure.title("Delete project request with only read access")
 @allure.tag("API", "regress")
 @allure.feature("Projects")

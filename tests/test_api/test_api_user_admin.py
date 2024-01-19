@@ -9,7 +9,7 @@ from config import settings
 from utils.utils import load_schema
 from tests.functions import api_add_project
 
-@allure.id("288")
+
 @allure.title("Get project request with admin  access")
 @allure.tag("API", "smoke")
 @allure.feature("Projects")
@@ -33,7 +33,6 @@ def test_get_project_successfully_200(browser_config, auth):
         allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")
 
 
-@allure.id("288")
 @allure.title("Update project request with admin access")
 @allure.tag("API", "smoke")
 @allure.feature("Projects")
@@ -64,7 +63,6 @@ def test_post_update_project_successfully_200(browser_config, auth):
         allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")
 
 
-@allure.id("29520")
 @allure.title("Get project request with only read access")
 @allure.tag("API", "regress")
 @allure.feature("Projects")
@@ -88,7 +86,6 @@ def test_post_update_unknown_project_400(browser_config, auth):
         allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")
 
 
-@allure.id("29519")
 @allure.title("Delete project request with admin access")
 @allure.tag("API", "smoke")
 @allure.feature("Projects")
@@ -113,7 +110,6 @@ def test_post_delete_project_200(browser_config, auth):
         allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")
 
 
-@allure.id("29518")
 @allure.title("Get project request with only read access")
 @allure.tag("API", "regress")
 @allure.feature("Projects")

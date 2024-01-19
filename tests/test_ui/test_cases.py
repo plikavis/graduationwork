@@ -5,7 +5,6 @@ from graduation_work.case_page import Case
 from tests.functions import api_add_project, api_delete_project
 
 
-@allure.id("288")
 @allure.title("Try empty case and check message")
 @allure.tag("UI", "regress")
 @allure.feature("Cases")
@@ -23,7 +22,7 @@ def test_try_add_empty_test_case(browser_config, auth):
     with step("Check message about fail"):
         case.check_message_fail()
 
-@allure.id("250")
+
 @allure.title("Add new test case")
 @allure.tag("UI", "Smoke")
 @allure.feature("Cases")
@@ -51,7 +50,6 @@ def test_add_test_case_successfully(browser_config, auth):
         api_delete_project(project_id=project_id)
 
 
-@allure.id("288")
 @allure.title("Edit name of test case and save")
 @allure.tag("API", "regress")
 @allure.feature("Cases")

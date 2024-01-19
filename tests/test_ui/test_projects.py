@@ -3,7 +3,7 @@ from selene import browser
 from graduation_work.project_page import Project
 from tests.functions import api_add_project, api_delete_project
 
-@allure.id("288")
+
 @allure.title("Add new project")
 @allure.tag("UI", "smoke")
 @allure.feature("Projects")
@@ -27,7 +27,7 @@ def test_add_new_project(browser_config, auth):
     with allure.step("Check message adding new project succesfully"):
         project.check_message_adding_new_project()
 
-@allure.id("288")
+
 @allure.title("Try empty project and check message")
 @allure.tag("UI", "regress")
 @allure.feature("Projects")
@@ -45,7 +45,7 @@ def test_try_add_empty_name_project(browser_config, auth):
     with allure.step("Check error message"):
         project.check_error_message_adding_project()
 
-@allure.id("288")
+
 @allure.title("Edit project name and save data")
 @allure.tag("UI", "regress")
 @allure.feature("Projects")
@@ -73,7 +73,6 @@ def test_edit_project(browser_config, auth):
         api_delete_project(project_id)
 
 
-@allure.id("288")
 @allure.title("Check all tabs on project page")
 @allure.tag("UI", "regress")
 @allure.feature("Projects")
