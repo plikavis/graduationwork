@@ -20,11 +20,11 @@ def test_get_project_successfully_200(browser_config, auth):
     with allure.step("Get cookie"):
         cookie = browser.driver.get_cookie("tr_session")
     with allure.step("Send request"):
-        result = requests.get(url=settings.base_url + settings.api + '/get_project/1',
+        result = requests.get(url=settings.base_url + settings.api + '/get_project/377',
                               cookies={"tr_session": cookie['value']})
     with allure.step("Check answer: response status code, id, json structure"):
         assert result.status_code == 200
-        assert result.json()['id'] == 1
+        assert result.json()['id'] == 377
         schema = load_schema("get_project.json")
         jsonschema.validate(result.json(), schema)
         allure.attach(body=str(result.request.url), name="Request URL", attachment_type=AttachmentType.TEXT,

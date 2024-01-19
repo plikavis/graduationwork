@@ -13,8 +13,8 @@ from tests.functions import api_add_project, api_delete_project
 @allure.story("UI: Adding interface for cases")
 def test_try_add_empty_test_case(browser_config, auth):
     case = Case()
-    with step(f"Go to cases page for project with id - 1"):
-        case.open_cases_page(1)
+    with step(f"Go to cases page for project with id - 377"):
+        case.open_cases_page(377)
     with step("Click 'Add case' button"):
         case.click_add_case_button()
     with step("Click 'Add and next' button"):
