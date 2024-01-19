@@ -72,4 +72,3 @@ def auth_read():
         browser.driver.add_cookie({"name": "tr_session", "value": cookie_auth})
         browser.open(f"{settings.base_url}")
         browser.element(".navigation-username").should(have.text("Autotest"))
-
