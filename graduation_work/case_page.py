@@ -12,8 +12,8 @@ class Case:
         return self
 
     def input_case_name_for_add(self):
-        browser.element('[data-testid="addEditCaseTitle"]').clear().set_value(str(uuid.uuid4()))
-        browser.element('[data-testid="addEditCaseTitle"]').should(be.not_.blank)
+        browser.element('[id="title"]').type(str(uuid.uuid4()))
+        browser.element('[id="title"]').should(be.not_.blank)
         return self
 
     def click_add_case_button_for_create(self,):
