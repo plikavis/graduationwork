@@ -1,8 +1,6 @@
 ## Проект UI и API автотестов TestRail.com 
 
 
-###[Job](https://support.testrail.com/hc/en-us/articles/7077792415124-Projects)
-
 <!-- Технологии -->
 <p  align="center">
   <code><img width="5%" title="Pycharm" src="images/logo/pycharm.png"></code>
@@ -20,7 +18,6 @@
 </p>
 
 <!-- Тест кейсы -->
-
 ### Что проверяем
 UI-тесты:
 * Создание нового проекта 
@@ -30,24 +27,28 @@ UI-тесты:
 * Создание нового тест-кейса
 * Создание нового тест-кейса с пустым названием и сообщение об ошибке
 * Редактирование тест-кейса и сообщение об успешном обновлении данных
- 
-API-тесты:
-* Get запрос на получение данных по проекту, формат запроса, код ответа, формат ответа 
-* 
-* 
+
+API-тесты: 
+### [Documentation](https://support.testrail.com/hc/en-us/articles/7077792415124-Projects)
+* Работу системы под пользователем с полными правами и правами на чтение
+* Отправку запросов 
+* Тело ответа (реализована проверка на json-схему)
+* Код ответа
+* Тело ответа (реализована проверка на json-схему)
+* Данные в ответе 
 
 ### <img width="5%" title="Jenkins" src="images/logo/jenkins.png"> Запуск проекта в Jenkins
 
 ### [Job](https://jenkins.autotests.cloud/job/008_plika_vis_testrail/)
 
 ##### При нажатии на "Собрать сейчас" начнется сборка тестов и их прохождение, через виртуальную машину в Selenide.
-![This is an image](images/screenshot/jenkins.png)
+![This is an image](images/screenshot/jenkins_run.png)
 
 <!-- Allure report -->
 
 ### <img width="5%" title="Allure Report" src="images/logo/allure_report.png"> Allure report
 ### [Report](https://jenkins.autotests.cloud/job/008_plika_vis_testrail/)
-##### После прохождения тестов, результаты можно посмотреть в Allure отчете, где так же содержится ссылка на Jenkins
+##### После прохождения тестов, результаты можно посмотреть в Allure отчете, ссылка так же содержится  на Jenkins
 ![This is an image](images/screenshot/allure_dashboard.png)
 
 ##### Во вкладке Graphs можно посмотреть графики о прохождении тестов, по их приоритезации, по времени прохождения и др.
@@ -57,7 +58,7 @@ API-тесты:
 ![This is an image](images/screenshot/allure_video.png)
 
 ##### Видео прохождение теста
-![This is an image](images/screenshot/tests_ui.gif)
+![This is an image](images/screenshot/video.gif)
 
 <!-- Allure TestOps -->
 
