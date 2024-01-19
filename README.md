@@ -41,7 +41,7 @@ API-тесты:
 
 ### [Job](https://jenkins.autotests.cloud/job/008_plika_vis_testrail/)
 
-##### При нажатии на "Собрать сейчас" начнется сборка тестов и их прохождение, через виртуальную машину в Selenide.
+##### При нажатии на "Build with Parameters" начнется сборка тестов и их прохождение, через виртуальную машину в Selenide.
 ![This is an image](images/screenshot/jenkins_run.png)
 
 <!-- Allure report -->
