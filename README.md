@@ -29,7 +29,7 @@ UI-тесты:
 * Редактирование тест-кейса и сообщение об успешном обновлении данных
 
 API-тесты: 
-### [Documentation](https://support.testrail.com/hc/en-us/articles/7077792415124-Projects)
+## [Documentation](https://support.testrail.com/hc/en-us/articles/7077792415124-Projects)
 * Работу системы под пользователем с полными правами и правами на чтение
 * Отправку запросов 
 * Тело ответа (реализована проверка на json-схему)
