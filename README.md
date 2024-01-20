@@ -64,7 +64,7 @@ API-тесты:
 
 ### <img width="5%" title="Allure TestOps" src="images/logo/allure_testops.png"> Интеграция с Allure TestOps
 
-### [Dashboard](https://allure.autotests.cloud/project/2291/dashboards)
+### [Dashboard](https://allure.autotests.cloud/project/3989/dashboards)
 
 ##### Так же вся отчетность сохраняется в Allure TestOps, где строятся аналогичные графики.
 ![This is an image](images/screenshot/allure_testops_dashboard.png)
