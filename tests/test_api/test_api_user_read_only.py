@@ -3,10 +3,9 @@ from selene import browser
 from config import settings
 import allure
 import requests
-from allure_commons.types import AttachmentType
 
-from utils.attach import add_logs_request
-from utils.utils import load_schema
+from attach.attach import add_logs_request
+from attach import load_schema
 
 
 @allure.title("Get project request with only read access")

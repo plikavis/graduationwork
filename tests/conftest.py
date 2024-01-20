@@ -5,7 +5,7 @@ from allure_commons.types import AttachmentType
 from selene import have
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from utils import attach
+from attach import attach
 import requests
 from selene import browser
 from config import settings

@@ -2,12 +2,11 @@ import json
 import allure
 import requests
 
-from allure_commons.types import AttachmentType
 from selene import browser
 import jsonschema
 from config import settings
-from utils.attach import add_logs_request
-from utils.utils import load_schema
+from attach.attach import add_logs_request
+from attach import load_schema
 from tests.conftest import api_add_project
 
 

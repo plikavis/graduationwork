@@ -1,7 +1,7 @@
 
 import dotenv
 from pydantic_settings import BaseSettings
-from utils.utils import abs_path_from_project
+from attach import abs_path_from_project
 
 
 class Config(BaseSettings):
