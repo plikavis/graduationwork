@@ -11,6 +11,7 @@ from selene import browser
 from config import settings
 
 
+
 @pytest.fixture(scope="function")
 def browser_config_ui(request):
     browser_version = settings.BROWSER_VERSION

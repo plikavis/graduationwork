@@ -55,10 +55,7 @@ def test_post_update_project_successfully_200(browser_config_api, auth):
         assert result.json()['announcement'] == "New announcement --update from autotest"
         schema = load_schema("update_project_200.json")
         jsonschema.validate(result.json(), schema)
-        allure.attach(body=str(result.request.url), name="Request URL", attachment_type=AttachmentType.TEXT,
-                      extension="txt")
-        allure.attach(body=result.text, name="Response", attachment_type=AttachmentType.TEXT, extension="txt")
-        allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")
+        add_logs_request(result)
 
 
 @allure.title("Get project request with only read access")
@@ -80,10 +77,7 @@ def test_post_update_unknown_project_400(browser_config_api, auth):
         assert result.json() == {'error': 'Field :project_id is not a valid or accessible project.'}
         schema = load_schema("error.json")
         jsonschema.validate(result.json(), schema)
-        allure.attach(body=str(result.request.url), name="Request URL", attachment_type=AttachmentType.TEXT,
-                      extension="txt")
-        allure.attach(body=result.text, name="Response", attachment_type=AttachmentType.TEXT, extension="txt")
-        allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")
+        add_logs_request(result)
 
 
 @allure.title("Delete project request with admin access")
@@ -104,10 +98,7 @@ def test_post_delete_project_200(browser_config_api, auth):
     with allure.step("Check answer"):
         assert result.text == ""
         assert result.status_code == 200
-        allure.attach(body=str(result.request.url), name="Request URL", attachment_type=AttachmentType.TEXT,
-                      extension="txt")
-        allure.attach(body=result.text, name="Response", attachment_type=AttachmentType.TEXT, extension="txt")
-        allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")
+        add_logs_request(result)
 
 
 @allure.title("Get project request with only read access")
@@ -128,7 +119,4 @@ def test_post_delete_unknown_project_400(browser_config_api, auth):
         assert result.status_code == 400
         schema = load_schema("error.json")
         jsonschema.validate(result.json(), schema)
-        allure.attach(body=str(result.request.url), name="Request URL", attachment_type=AttachmentType.TEXT,
-                      extension="txt")
-        allure.attach(body=result.text, name="Response", attachment_type=AttachmentType.TEXT, extension="txt")
-        allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")
+        add_logs_request(result)

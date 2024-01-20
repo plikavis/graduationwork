@@ -5,6 +5,7 @@ import allure
 import requests
 from allure_commons.types import AttachmentType
 
+from utils.attach import add_logs_request
 from utils.utils import load_schema
 
 
@@ -26,11 +27,7 @@ def test_get_project_no_access_403(browser_config_api, auth_read):
                                           " have the permissions to access it."}
         schema = load_schema("error.json")
         jsonschema.validate(result.json(), schema)
-        allure.attach(body=str(result.request.url), name="Request URL", attachment_type=AttachmentType.TEXT,
-                      extension="txt")
-        allure.attach(body=result.text, name="Response", attachment_type=AttachmentType.TEXT, extension="txt")
-        allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")
-
+        add_logs_request(result)
 
 @allure.title("Delete project request with only read access")
 @allure.tag("API", "regress")
@@ -51,7 +48,4 @@ def test_post_delete_project_user_read_only_403(browser_config_api, auth_read):
         assert result.status_code == 403
         schema = load_schema("error.json")
         jsonschema.validate(result.json(), schema)
-        allure.attach(body=str(result.request.url), name="Request URL", attachment_type=AttachmentType.TEXT,
-                      extension="txt")
-        allure.attach(body=result.text, name="Response", attachment_type=AttachmentType.TEXT, extension="txt")
-        allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")
+        add_logs_request(result)
