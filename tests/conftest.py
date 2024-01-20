@@ -2,12 +2,11 @@ import allure
 import pytest
 from allure_commons._allure import step
 from allure_commons.types import AttachmentType
-from selene import have
+from selene import have, browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from attach import attach
 import requests
-from selene import browser
 from config import settings
 
 

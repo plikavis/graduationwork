@@ -5,7 +5,7 @@ import allure
 import requests
 
 from attach.attach import add_logs_request
-from attach import load_schema
+from utils import load_schema
 
 
 @allure.title("Get project request with only read access")
@@ -27,6 +27,7 @@ def test_get_project_no_access_403(browser_config_api, auth_read):
         schema = load_schema("error.json")
         jsonschema.validate(result.json(), schema)
         add_logs_request(result)
+
 
 @allure.title("Delete project request with only read access")
 @allure.tag("API", "regress")

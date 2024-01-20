@@ -1,7 +1,7 @@
-
 import dotenv
 from pydantic_settings import BaseSettings
-from attach import abs_path_from_project
+
+from utils import abs_path_from_project
 
 
 class Config(BaseSettings):
@@ -14,7 +14,6 @@ class Config(BaseSettings):
     ENDPOINT: str = "/index.php?/api/v2"
     LOGIN_SELENOID: str = "test"
     PASSWORD_SELENOID: str = "test"
-
 
 
 dotenv.load_dotenv(dotenv_path=abs_path_from_project('.env.'))

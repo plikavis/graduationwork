@@ -6,8 +6,9 @@ from selene import browser
 import jsonschema
 from config import settings
 from attach.attach import add_logs_request
-from attach import load_schema
+
 from tests.conftest import api_add_project
+from utils import load_schema
 
 
 @allure.title("Get project request with admin  access")

@@ -1,6 +1,6 @@
 import allure
 from allure_commons._allure import step
-from pages.case_page import Case, case
+from pages.case_page import case
 from tests.conftest import api_add_project, api_delete_project
 
 
