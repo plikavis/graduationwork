@@ -21,7 +21,7 @@ def test_get_project_successfully_200(browser_config_api, auth):
     with allure.step("Get cookie"):
         cookie = browser.driver.get_cookie("tr_session")
     with allure.step("Send request"):
-        result = requests.get(url=settings.base_url + settings.api + '/get_project/377',
+        result = requests.get(url=settings.BASE_URL + settings.ENDPOINT + '/get_project/377',
                               cookies={"tr_session": cookie['value']})
     with allure.step("Check answer: response status code, id, json structure"):
         assert result.status_code == 200
@@ -43,7 +43,7 @@ def test_post_update_project_successfully_200(browser_config_api, auth):
     with allure.step("Send request"):
         project_id = api_add_project(name="New project21", announcement="Test",
                                      show_announcement=True, suite_mode=2)
-        result = requests.post(url=settings.base_url + settings.api + f'/update_project/{project_id}',
+        result = requests.post(url=settings.BASE_URL + settings.ENDPOINT + f'/update_project/{project_id}',
                                cookies={"tr_session": cookie['value']},
                                json={"name": "New_name --update from autotest",
                                      "announcement": "New announcement --update from autotest"})
@@ -71,7 +71,7 @@ def test_post_update_unknown_project_400(browser_config_api, auth):
     with allure.step("Get cookie"):
         cookie = browser.driver.get_cookie("tr_session")
     with allure.step("Send request"):
-        result = requests.post(url=settings.base_url + settings.api + '/update_project/40004',
+        result = requests.post(url=settings.BASE_URL + settings.ENDPOINT + '/update_project/40004',
                                cookies={"tr_session": cookie['value']},
                                json={"name": "New_name",
                                      "announcement": "New announcement"})
@@ -98,7 +98,7 @@ def test_post_delete_project_200(browser_config_api, auth):
     with allure.step("Send request"):
         project_id = api_add_project(name="New project21", announcement="Test",
                                      show_announcement=True, suite_mode=2)
-        result = requests.post(url=settings.base_url + settings.api + f'/delete_project/{project_id}',
+        result = requests.post(url=settings.BASE_URL + settings.ENDPOINT + f'/delete_project/{project_id}',
                                cookies={"tr_session": cookie['value']},
                                headers={'Content-Type': 'application/json'})
     with allure.step("Check answer"):
@@ -120,7 +120,7 @@ def test_post_delete_unknown_project_400(browser_config_api, auth):
     with allure.step("Get cookie"):
         cookie = browser.driver.get_cookie("tr_session")
     with allure.step("Send request"):
-        result = requests.post(url=settings.base_url + settings.api + f'/delete_project/4001',
+        result = requests.post(url=settings.BASE_URL + settings.ENDPOINT + f'/delete_project/4001',
                                cookies={"tr_session": cookie['value']},
                                headers={'Content-Type': 'application/json'})
     with allure.step("Check answer"):

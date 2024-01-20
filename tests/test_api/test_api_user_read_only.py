@@ -18,7 +18,7 @@ def test_get_project_no_access_403(browser_config_api, auth_read):
     with allure.step("Get cookie"):
         cookie = browser.driver.get_cookie("tr_session")
     with allure.step("Send request"):
-        result = requests.get(url=settings.base_url + settings.api + '/get_project/377',
+        result = requests.get(url=settings.BASE_URL + settings.ENDPOINT + '/get_project/377',
                               cookies={"tr_session": cookie['value']})
     with allure.step("Check answer"):
         assert result.status_code == 403
@@ -42,7 +42,7 @@ def test_post_delete_project_user_read_only_403(browser_config_api, auth_read):
     with allure.step("Get cookie"):
         cookie = browser.driver.get_cookie("tr_session")
     with allure.step("Send request"):
-        result = requests.post(url=settings.base_url + settings.api + '/delete_project/377',
+        result = requests.post(url=settings.BASE_URL + settings.ENDPOINT + '/delete_project/377',
                                cookies={"tr_session": cookie['value']},
                                headers={'Content-Type': 'application/json'})
     with allure.step("Check answer"):
