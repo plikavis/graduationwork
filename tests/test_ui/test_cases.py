@@ -1,7 +1,7 @@
 import allure
 from allure_commons._allure import step
-from graduation_work.case_page import Case
-from tests.functions import api_add_project, api_delete_project
+from pages.case_page import Case, case
+from tests.conftest import api_add_project, api_delete_project
 
 
 @allure.title("Try empty case and check message")
@@ -10,8 +10,7 @@ from tests.functions import api_add_project, api_delete_project
 @allure.label("owner", "Vishnyakova P.")
 @allure.story("UI: Adding interface for cases")
 @allure.step("UI: Try create test case with empty name")
-def test_try_add_empty_test_case(browser_config, auth):
-    case = Case()
+def test_try_add_empty_test_case(browser_config_ui, auth):
     with step(f"Go to cases page for project with id - 377"):
         case.open_cases_page(377)
     with step("Click 'Add case' button"):
@@ -28,8 +27,7 @@ def test_try_add_empty_test_case(browser_config, auth):
 @allure.label("owner", "Vishnyakova P.")
 @allure.story("UI: Adding interface for cases")
 @allure.step("UI: Add new test case")
-def test_add_test_case_successfully(browser_config, auth):
-    case = Case()
+def test_add_test_case_successfully(browser_config_ui, auth):
     with allure.step("Create new project and get its id"):
         project_id = api_add_project(name="for add case 21",
                                      announcement="announcement for add case",
@@ -55,8 +53,7 @@ def test_add_test_case_successfully(browser_config, auth):
 @allure.label("owner", "Vishnyakova P.")
 @allure.story("UI: Adding interface for cases")
 @allure.step("UI: Edit test case")
-def test_edit_test_case(browser_config, auth):
-    case = Case()
+def test_edit_test_case(browser_config_ui, auth):
     with allure.step("Open case card in First project"):
         case.open_case_card()
     with allure.step("Click edit button"):

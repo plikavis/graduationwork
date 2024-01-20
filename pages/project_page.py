@@ -72,3 +72,6 @@ class Project:
         browser.element("#users-fields-fields").click()
         browser.element("#addConfig").should(have.text("Add User Variable"))
         return self
+
+
+project = Project()

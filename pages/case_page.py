@@ -59,3 +59,7 @@ class Case:
         time.sleep(3)
         browser.element('[data-testid="addEditCaseTitle"]').should(be.not_.blank)
         return self
+
+
+case = Case()
+

@@ -23,3 +23,10 @@ def add_video(browser):
            + video_url \
            + "' type='video/mp4'></video></body></html>"
     allure.attach(html, 'video_' + browser.driver.session_id, AttachmentType.HTML, '.html')
+
+
+def add_logs_request(result):
+    allure.attach(body=str(result.request.url), name="Request URL", attachment_type=AttachmentType.TEXT,
+                  extension="txt")
+    allure.attach(body=result.text, name="Response", attachment_type=AttachmentType.JSON, extension="txt")
+    allure.attach(body=str(result.cookies), name="Cookies", attachment_type=AttachmentType.TEXT, extension="txt")

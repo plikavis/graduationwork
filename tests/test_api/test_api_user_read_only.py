@@ -1,8 +1,11 @@
+import jsonschema
 from selene import browser
 from config import settings
 import allure
 import requests
 from allure_commons.types import AttachmentType
+
+from utils.utils import load_schema
 
 
 @allure.title("Get project request with only read access")
@@ -11,7 +14,7 @@ from allure_commons.types import AttachmentType
 @allure.label("owner", "Vishnyakova P.")
 @allure.story("API: Adding API for projects")
 @allure.step("API: Try to get project without access`")
-def test_get_project_no_access_403(browser_config, auth_read):
+def test_get_project_no_access_403(browser_config_api, auth_read):
     with allure.step("Get cookie"):
         cookie = browser.driver.get_cookie("tr_session")
     with allure.step("Send request"):
@@ -21,6 +24,8 @@ def test_get_project_no_access_403(browser_config, auth_read):
         assert result.status_code == 403
         assert result.json() == {"error": "The requested project does not exist or you do not"
                                           " have the permissions to access it."}
+        schema = load_schema("error.json")
+        jsonschema.validate(result.json(), schema)
         allure.attach(body=str(result.request.url), name="Request URL", attachment_type=AttachmentType.TEXT,
                       extension="txt")
         allure.attach(body=result.text, name="Response", attachment_type=AttachmentType.TEXT, extension="txt")
@@ -33,7 +38,7 @@ def test_get_project_no_access_403(browser_config, auth_read):
 @allure.label("owner", "Vishnyakova P.")
 @allure.story("API: Adding API for projects")
 @allure.step("API:Try delete project  with only read access")
-def test_post_delete_project_user_read_only_403(browser_config, auth_read):
+def test_post_delete_project_user_read_only_403(browser_config_api, auth_read):
     with allure.step("Get cookie"):
         cookie = browser.driver.get_cookie("tr_session")
     with allure.step("Send request"):
@@ -44,6 +49,8 @@ def test_post_delete_project_user_read_only_403(browser_config, auth_read):
         assert result.json() == {"error": "You are not allowed to delete projects "
                                           "(requires administrator privileges)."}
         assert result.status_code == 403
+        schema = load_schema("error.json")
+        jsonschema.validate(result.json(), schema)
         allure.attach(body=str(result.request.url), name="Request URL", attachment_type=AttachmentType.TEXT,
                       extension="txt")
         allure.attach(body=result.text, name="Response", attachment_type=AttachmentType.TEXT, extension="txt")
