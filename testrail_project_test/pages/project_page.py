@@ -7,8 +7,8 @@ class Project:
         return self
 
     def input_project_data(self):
-        browser.element('[data-testid="addProjectNameInput"]').type("New project by autotest 1")
-        browser.element('[data-testid="addEditProjectAnnouncement"]').type("Announcement by autotest 1")
+        browser.element('[data-testid="addProjectNameInput"]').click().type("New project by autotest 1")
+        browser.element('[data-testid="addEditProjectAnnouncement"]').click().type("Announcement by autotest 1")
         return self
 
     def click_show_announcement(self):
