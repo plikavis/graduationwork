@@ -13,9 +13,7 @@ class Case:
         return self
 
     def input_case_name_for_add(self):
-        time.sleep(3)
-        browser.element('[data-testid="addEditCaseTitle"]').type(str(uuid.uuid4()))
-        time.sleep(3)
+        browser.element('[data-testid="addEditCaseTitle"]').click().type(str(uuid.uuid4()))
         browser.element('[data-testid="addEditCaseTitle"]').should(be.not_.blank)
         return self
 
@@ -54,9 +52,7 @@ class Case:
         return self
 
     def input_case_name_for_edit(self):
-        time.sleep(3)
-        browser.element('[data-testid="addEditCaseTitle"]').clear().type(str(uuid.uuid4()))
-        time.sleep(3)
+        browser.element('[data-testid="addEditCaseTitle"]').click().clear().type(str(uuid.uuid4()))
         browser.element('[data-testid="addEditCaseTitle"]').should(be.not_.blank)
         return self
 
