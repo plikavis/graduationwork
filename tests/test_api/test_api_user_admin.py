@@ -5,7 +5,7 @@ import requests
 from selene import browser
 import jsonschema
 from config import settings
-from attach.attach import add_logs_request
+from testrail_project_test.utils.attach import add_logs_request
 
 from tests.conftest import api_add_project
 from utils import load_schema

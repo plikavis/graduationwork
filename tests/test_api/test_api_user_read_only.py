@@ -4,7 +4,7 @@ from config import settings
 import allure
 import requests
 
-from attach.attach import add_logs_request
+from testrail_project_test.utils.attach import add_logs_request
 from utils import load_schema
 
 

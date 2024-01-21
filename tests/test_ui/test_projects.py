@@ -1,6 +1,6 @@
 import allure
 from selene import browser
-from pages.project_page import project
+from testrail_project_test.pages.project_page import project
 from tests.conftest import api_add_project, api_delete_project
 
 

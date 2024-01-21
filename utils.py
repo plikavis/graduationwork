@@ -9,7 +9,7 @@ def load_schema(filepath):
 
 
 def abs_path_from_project(relative_path: str):
-    import pages
+    from testrail_project_test import pages
     from pathlib import Path
     return (
         Path(pages.__file__)
