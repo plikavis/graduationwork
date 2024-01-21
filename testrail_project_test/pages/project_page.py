@@ -40,7 +40,7 @@ class Project:
         return self
 
     def go_to_project_page(self, id):
-        browser.open(f"/projects/overview/{id}")
+        browser.open(f"/index.php?/projects/overview/{id}")
         return self
 
     def click_save_button(self):

@@ -5,7 +5,7 @@ import uuid
 
 class Case:
     def open_cases_page(self, project_id):
-        browser.open(f"/suites/overview/{project_id}")
+        browser.open(f"/index.php?/suites/overview/{project_id}")
         return self
 
     def click_add_case_button(self):
@@ -45,7 +45,7 @@ class Case:
         return self
 
     def open_case_card(self):
-        browser.open("/cases/view/2322")
+        browser.open("/index.php?/cases/view/2322")
         return self
 
     def check_message_create_success(self):
