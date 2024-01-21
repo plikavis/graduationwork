@@ -28,7 +28,7 @@ def browser_config_ui(request):
     password = settings.PASSWORD_SELENOID
     driver = webdriver.Remote(command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
                               options=options)
-    browser.config.base_url = "https://graduationwork.testrail.io/index.php?"
+    browser.config.base_url = "https://graduationwork.testrail.io"
     browser.config.driver = driver
     browser.config.window_width = 1440
     browser.config.window_height = 1440

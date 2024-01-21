@@ -1,5 +1,4 @@
-from selene import browser, have, command
-from selene.support.conditions import be
+from selene import browser, have, command, be
 
 
 class Project:
