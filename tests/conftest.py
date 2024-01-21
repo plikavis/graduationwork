@@ -117,4 +117,3 @@ def api_delete_project(project_id):
                            cookies={"tr_session": cookie['value']},
                            headers={'Content-Type': 'application/json'})
     return result.text
-

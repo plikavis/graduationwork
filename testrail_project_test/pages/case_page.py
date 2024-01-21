@@ -1,4 +1,3 @@
-import time
 from selene import browser, have, be
 import uuid
 
@@ -58,5 +57,3 @@ class Case:
 
 
 case = Case()
-
-
