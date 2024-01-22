@@ -80,7 +80,7 @@ API-тесты:
 ### <img width="5%" title="Allure TestOps" src="images/logo/jira.png"> Интеграция с Jira
  В задачах Jira есть ссылки на связные Test Case и Launches из Allure TestOps. 
 
- ![This is an image](images/screenshot/jira.png)
+ ![This is an image](images/screenshot/Jira.png)
 
 
 <!-- Telegram -->
