@@ -1,6 +1,6 @@
 import dotenv
 from pydantic_settings import BaseSettings
-from utils import abs_path_from_project
+from testrail_project_test.controls.utils import abs_path_from_project
 
 
 class Config(BaseSettings):

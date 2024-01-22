@@ -4,8 +4,8 @@ from config import settings
 import allure
 import requests
 
-from testrail_project_test.utils.attach import add_logs_request
-from utils import load_schema
+from testrail_project_test.controls.attach import add_logs_request
+from testrail_project_test.controls.utils import load_schema
 
 
 @allure.title("Get project request with only read access")

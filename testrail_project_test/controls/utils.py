@@ -3,16 +3,16 @@ import os
 
 
 def load_schema(filepath):
-    with open(os.path.dirname(os.path.abspath(__file__)) + '/schemes/' + filepath) as file:
+    with open(abs_path_from_project('schemes') + "/" + filepath) as file:
         schema = json.load(file)
         return schema
 
 
 def abs_path_from_project(relative_path: str):
-    from testrail_project_test import pages
+    import testrail_project_test
     from pathlib import Path
     return (
-        Path(pages.__file__)
+        Path(testrail_project_test.__file__)
         .parent.parent.joinpath(relative_path)
         .absolute()
         .__str__()

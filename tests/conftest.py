@@ -5,7 +5,7 @@ from allure_commons.types import AttachmentType
 from selene import have, browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from testrail_project_test.utils import attach
+from testrail_project_test.controls import attach
 import requests
 from config import settings
 
